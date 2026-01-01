@@ -1,11 +1,18 @@
 * {
     box-sizing: border-box;
+    font-family: "Comic sans MS";
 }
 
 body {
-	font-family: 'Comic Sans MS';
     color: #262228;
     margin: auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 table {
@@ -19,6 +26,27 @@ table, th, td {
 th, td {
     padding: 10px 20px;
     text-align: center;
+}
+
+#task-table {
+    width: 1000px;
+}
+
+/* Task table headers */
+#progress-th {
+    width: 10%;
+}
+
+#goal-th {
+    width: 15%;
+}
+
+#next-action-th {
+    width: 50%;
+}
+
+#time-th {
+    width: 10%;
 }
 
 .close-btn {
@@ -35,11 +63,10 @@ th, td {
 
 header {
     background-color: #0fab6f;
-    padding: 15px;
+    padding: 5px;
 }
 
 #header-text {
-    font-family: "Comic sans MS";
     font-size: 60px;
     color: #262228;
     padding-left: 70px;
@@ -47,6 +74,14 @@ header {
 
 #enter-task-div, .task-table-div {
     margin: 15px;
+}
+
+#enter-task-div {
+    border-radius: 25px;
+    border: 1px solid black;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 15px;
 }
 
 .task-input {
@@ -62,6 +97,11 @@ header {
     width: 400px;
 }
 
+input, input:focus {
+    border: 1px solid #999;
+    outline: none;
+}
+
 .add-btn {
     padding: 5px 15px 5px 15px;
     background: #d9d9d9;
@@ -69,7 +109,7 @@ header {
     font-size: 20px;
     cursor: pointer;
     transition: 0.3s;
-    border-radius: 0;
+    border-radius: 25px;
     user-select: none;
 }
 
