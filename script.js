@@ -39,24 +39,30 @@ document.querySelectorAll('LI').forEach(li => li.draggable = true);*/
 
 // Function to create new tasks
 function createNewTask() {
+    // Create table row for new task
     const tr = document.createElement('tr');
 
+    // Get task input values and check if they are empty
     const goalInput = goalInputElement.value;
     const nextActionInput = nextActionInputElement.value;
     if (goalInput == '' || nextActionInput == '') {
+        // TODO: Replace alert with modal
         alert("Please enter your task completely");
         return;
     }
 
+    // Create table datas for new task with task input
     const goalTd = document.createElement('td');
     goalTd.textContent = goalInput;
     const nextActionTd = document.createElement('td');
     nextActionTd.textContent = nextActionInput;
 
+    // Reset task input values
     goalInputElement.value = "";
     nextActionInputElement.value = "";
 
-    const closeButton = document.createElement("button");
+    // TODO: Replace close button with better UI to delete tasks
+    /*const closeButton = document.createElement("button");
     closeButton.textContent = "\u00D7";
     closeButton.classList.add("close-btn");
 
@@ -66,11 +72,13 @@ function createNewTask() {
     closeButton.addEventListener('click', function (e) {
         const tr = e.target.parentElement;
         tr.style.display = "none";
-    });
+    });*/
 
+    // Enable draggable feature
     tr.draggable = "true";
 
-    tr.append(goalTd, nextActionTd, closeButtonTd);
+    // Append elements to tasks table
+    tr.append(goalTd, nextActionTd, /*closeButtonTd*/);
     document.getElementById('task-table').appendChild(tr);
 }
 
