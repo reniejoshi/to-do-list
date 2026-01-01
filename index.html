@@ -15,12 +15,21 @@
     </header>
     <main>
         <div id="enterTaskDiv">
-            <input type="text" id="taskEntered" placeholder="Task...">
+            <input type="text" id="goal-input" class="task-input" placeholder="Goal...">
+            <input type ="text" id="next-action-input" class="task-input" placeholder="Next action...">
             <span onclick="createNewTask()" class="addBtn">Add</span>
         </div>
         <div class="taskListDiv">
-            <ul id="taskList">
-            </ul>
+            <table id="task-table">
+                <thead>
+                    <tr>
+                        <th>📈</th>
+                        <th id="goalTh">🎯Goal</th>
+                        <th id="nextActionTh">💡Next Action</th>
+                        <th id="timeTh">⏳Time</th>
+                    </tr>
+                </thead>
+            </table>
         </div>
     </main>
 	<script src="script.js"></script>

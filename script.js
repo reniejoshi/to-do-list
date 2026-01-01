@@ -1,9 +1,12 @@
 //https://www.w3schools.com/html/html5_webstorage.asp
 
+ const goalInputElement = document.getElementById('goal-input');
+ const nextActionInputElement = document.getElementById('next-action-input');
+
 // -- Display and add functionality to elements for existing tasks --
 
 // Add close button to existing tasks
-const nodeList = document.getElementsByTagName("LI");
+/*const nodeList = document.getElementsByTagName("LI");
 for (let i = 0; i < nodeList.length; i++) {
     let span = document.createElement("SPAN");
     let txt = document.createTextNode("\u00D7");
@@ -30,45 +33,57 @@ list.addEventListener('click', function(e) {
 }, false);
 
 // Enable draggable feature for list items
-document.querySelectorAll('LI').forEach(li => li.draggable = true);
+document.querySelectorAll('LI').forEach(li => li.draggable = true);*/
 
 // -- Implement functionality to create new tasks
 
 // Function to create new tasks
 function createNewTask() {
-    let li = document.createElement('li');
-    let taskEntered = document.getElementById('taskEntered').value;
-    let t = document.createTextNode(taskEntered);
-    li.appendChild(t);
-    if (taskEntered === '') {
-        alert("Please enter your task");
-    } else {
-        document.getElementById('taskList').appendChild(li);
+    const tr = document.createElement('tr');
+
+    const goalInput = goalInputElement.value;
+    const nextActionInput = nextActionInputElement.value;
+    if (goalInput == '' || nextActionInput == '') {
+        alert("Please enter your task completely");
+        return;
     }
-    document.getElementById('taskEntered').value = "";
 
-    let span = document.createElement("SPAN");
-    let txt = document.createTextNode("\u00D7");
-    span.className = "close";
-    span.appendChild(txt);
-    li.appendChild(span);
+    const goalTd = document.createElement('td');
+    goalTd.textContent = goalInput;
+    const nextActionTd = document.createElement('td');
+    nextActionTd.textContent = nextActionInput;
 
-    for (let i = 0; i < close.length; i++) {
-        close[i].addEventListener('click', function (e) {
-            const div = e.target.parentElement;
-            div.style.display = "none";
-        });
-    }    
+    goalInputElement.value = "";
+    nextActionInputElement.value = "";
 
-    li.draggable = "true";
+    const closeButton = document.createElement("button");
+    closeButton.textContent = "\u00D7";
+    closeButton.classList.add("close");
+
+    const closeButtonTd = document.createElement("td");
+    closeButtonTd.append(closeButton);
+
+    closeButton.addEventListener('click', function (e) {
+        const tr = e.target.parentElement;
+        tr.style.display = "none";
+    });
+
+    tr.draggable = "true";
+
+    tr.append(goalTd, nextActionTd, closeButtonTd);
+    document.getElementById('task-table').appendChild(tr);
 }
 
 // Add event listener to create task when enter key is pressed
-taskEntered.addEventListener("keydown", (e) => {
+
+const handleEnter = (e) => {
     if (e.key === "Enter") {
         createNewTask();
     }
-});
+}
+
+goalInputElement.addEventListener("keydown", handleEnter);
+nextActionInputElement.addEventListener("keydown", handleEnter);
 
 // -- Implement draggable feature --
 
