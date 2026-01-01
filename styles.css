@@ -5,6 +5,7 @@
 body {
 	font-family: 'Comic Sans MS';
     color: #262228;
+    margin: auto;
 }
 
 table {
@@ -20,14 +21,14 @@ th, td {
     text-align: center;
 }
 
-.close {
+.close-btn {
     position: absolute;
     right: 0;
     top: 0;
     padding: 12px 16px 12px 16px;
 }
   
-.close:hover {
+.close-btn:hover {
     background-color: #f44336;
     color: white;
 }
@@ -37,20 +38,15 @@ header {
     padding: 15px;
 }
 
-#headerText {
+#header-text {
     font-family: "Comic sans MS";
     font-size: 60px;
     color: #262228;
     padding-left: 70px;
 }
 
-#enterTaskDiv {
+#enter-task-div, .task-table-div {
     margin: 15px;
-}
-
-.taskListDiv {
-	/*max-width: 300px;*/
-	margin: auto;
 }
 
 .task-input {
@@ -66,7 +62,7 @@ header {
     width: 400px;
 }
 
-.addBtn {
+.add-btn {
     padding: 5px 15px 5px 15px;
     background: #d9d9d9;
     text-align: center;
@@ -77,6 +73,6 @@ header {
     user-select: none;
 }
 
-.addBtn:hover {
+.add-btn:hover {
     background-color: #bbb;
 }

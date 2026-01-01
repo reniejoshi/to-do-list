@@ -58,7 +58,7 @@ function createNewTask() {
 
     const closeButton = document.createElement("button");
     closeButton.textContent = "\u00D7";
-    closeButton.classList.add("close");
+    closeButton.classList.add("close-btn");
 
     const closeButtonTd = document.createElement("td");
     closeButtonTd.append(closeButton);
