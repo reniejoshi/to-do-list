@@ -1,8 +1,3 @@
-//https://www.w3schools.com/howto/howto_js_todolist.asp
-//https://www.geeksforgeeks.org/create-a-drag-and-drop-sortable-list-using-html-css-javascript/
-
-//appendChild a dropdown list for einsienhower matrix, and based on that color coding
-//https://www.w3schools.com/html/tryit.asp?filename=tryhtml_elem_select
 //https://www.w3schools.com/html/html5_webstorage.asp
 
 let nodeList = document.getElementsByTagName("LI");
