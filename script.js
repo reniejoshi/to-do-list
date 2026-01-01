@@ -4,6 +4,8 @@ const taskTable = document.getElementById('task-table');
 const goalInputElement = document.getElementById('goal-input');
 const nextActionInputElement = document.getElementById('next-action-input');
 
+const progressDropdownOptions = ['to-do', 'in-progress', 'completed'];
+
 // -- Display and add functionality to elements for existing tasks --
 
 // Add close button to existing tasks
@@ -52,6 +54,24 @@ function createNewTask() {
         return;
     }
 
+    // Create dropdown for progress data
+    const dropdown = document.createElement('select');
+    dropdown.id = 'progress-dropdown';
+    progressDropdownOptions.forEach((progressOption) => {
+        const option = document.createElement('option');
+        option.value = progressOption;
+        option.textContent = progressOption;
+        option.classList.add(progressOption);
+        dropdown.append(option);
+
+        if (progressOption == 'to-do') {
+            option.selected = true;
+        }
+    });
+
+    const dropdownTd = document.createElement('td');
+    dropdownTd.append(dropdown);
+
     // Create table datas for new task with task input
     const goalTd = document.createElement('td');
     goalTd.textContent = goalInput;
@@ -78,8 +98,8 @@ function createNewTask() {
     // Enable draggable feature
     tr.draggable = "true";
 
-    // Append elements to tasks table
-    tr.append(goalTd, nextActionTd, /*closeButtonTd*/);
+    // Append elements to task table
+    tr.append(dropdownTd, goalTd, nextActionTd);
     taskTable.appendChild(tr);
 }
 

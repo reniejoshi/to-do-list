@@ -76,3 +76,21 @@ header {
 .add-btn:hover {
     background-color: #bbb;
 }
+
+/* Progress dropdown options */
+.progress-dropdown {
+    height: 100%;
+    width: 100%;
+}
+
+.to-do {
+    background-color: #d9d9d9;
+}
+
+.in-progress {
+    background-color: #ffe5a0;
+}
+
+.completed {
+    background-color: #d4edbc;
+}
