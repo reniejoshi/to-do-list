@@ -1,7 +1,8 @@
 //https://www.w3schools.com/html/html5_webstorage.asp
 
- const goalInputElement = document.getElementById('goal-input');
- const nextActionInputElement = document.getElementById('next-action-input');
+const taskTable = document.getElementById('task-table');
+const goalInputElement = document.getElementById('goal-input');
+const nextActionInputElement = document.getElementById('next-action-input');
 
 // -- Display and add functionality to elements for existing tasks --
 
@@ -79,7 +80,7 @@ function createNewTask() {
 
     // Append elements to tasks table
     tr.append(goalTd, nextActionTd, /*closeButtonTd*/);
-    document.getElementById('task-table').appendChild(tr);
+    taskTable.appendChild(tr);
 }
 
 // Add event listener to create task when enter key is pressed
