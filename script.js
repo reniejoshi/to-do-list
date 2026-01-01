@@ -95,7 +95,8 @@ goalInputElement.addEventListener("keydown", handleEnter);
 nextActionInputElement.addEventListener("keydown", handleEnter);
 
 // -- Implement draggable feature --
-
+// TODO: Update draggable feature for table
+/*
 const draggableList = document.getElementById('taskList');
 let draggedItem = null;
 
@@ -139,4 +140,4 @@ const getDragAfterElement = (container, y) => {
     },
     { offset: Number.NEGATIVE_INFINITY, }
     ).element;
-};
+};*/
